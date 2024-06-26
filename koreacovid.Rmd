@@ -19,9 +19,7 @@ mutate(across(where(is.character), as.factor))
 
 ```
 
-#Introduction
-
-
+### Introduction
 
 
 
@@ -34,6 +32,11 @@ Some of the data was uncoded for sex - sex must be just male or female
 state of a patient must be died or alive - we adjust that as well     
   
 # Your Question - Is dying independent of sex?
+$H_0$:
+There is no difference in COVID-19 mortality rates between males and females. In other words, the probability of dying is independent of sex.
+
+$H_A$:
+There is a difference in COVID-19 mortality rates between males and females. In other words, the probability of dying depends on sex.
 
 
 # Methods
@@ -62,9 +65,20 @@ This barchart shows that korean males were more likely to die from covid then ko
   
 ## Numerical results
 
+```{r}
+table1 <- xtabs(~result + Sex, data=kRdata)
+rowPerc(table1)
+colPerc(table1)
+```
+this nummerical summary shows that more females (98.7%) survived COVID-19 than males (97%), leading to a difference in death rates, with more males (3%) dying from the virus than females (1.4%).
 
 ## Inferential results 
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
 
 
