@@ -80,7 +80,12 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
+The p-value for the chi-square test is 0.001, so we reject the null hypothesis. 
+
+The Fisher exact test shows that men are 2.3 times more likely to die than women in korea
 
 
 ## Conclusions
+
+Both the Pearson's Chi-Squared Test and Fisher's Exact Test show strong evidence that dying from COVID-19 is not the same for males and females. The data indicates a significant difference in death rates, with males being more likely to die from COVID-19 than females. Therefore, we reject the idea that sex doesn't affect the death rate and accept that there is a difference in COVID-19 death rates between males and females.
 
